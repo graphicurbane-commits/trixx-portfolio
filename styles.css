@@ -1,0 +1,45 @@
+
+/* styles.css - Minimal black + teal gallery for Trixx Graphics */
+:root{
+  --bg: #0b0b0b;
+  --teal: #0fb3a3;
+  --muted: #999;
+  --card: #111;
+  --gap: 18px;
+  --maxw: 1100px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#eee;background:var(--bg);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--maxw);margin:40px auto;padding:28px}
+.header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:22px}
+.brand{display:flex;flex-direction:column;gap:6px}
+.brand h1{font-size:28px;margin:0;letter-spacing:1px}
+.brand p{margin:0;color:var(--muted)}
+
+.tag{background:linear-gradient(90deg, rgba(15,179,163,0.06), rgba(255,255,255,0));padding:10px 14px;border-left:4px solid var(--teal);font-weight:600;color:var(--teal);border-radius:6px}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin-top:20px}
+.card{background:var(--card);border-radius:10px;padding:10px;overflow:hidden;min-height:240px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.03)}
+.card img{width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.6))}
+.feature{grid-column:span 2;min-height:360px}
+
+.meta{display:flex;justify-content:space-between;align-items:center;margin-top:18px;color:var(--muted);font-size:14px}
+.contact{background:linear-gradient(90deg, rgba(15,179,163,0.06), rgba(255,255,255,0));padding:14px;border-radius:8px;border-left:3px solid var(--teal);display:flex;flex-direction:column;gap:6px}
+.cta{margin-top:12px;display:flex;gap:8px}
+.btn{background:var(--teal);color:#041014;padding:9px 12px;border-radius:8px;text-decoration:none;font-weight:700}
+
+.placeholder{display:flex;align-items:center;justify-content:center;min-height:140px;color:rgba(255,255,255,0.14);font-weight:600;border:2px dashed rgba(255,255,255,0.03);border-radius:8px}
+
+footer{margin-top:36px;color:var(--muted);font-size:13px;text-align:center;padding-bottom:40px}
+
+/* Responsive */
+@media (max-width:900px){
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .feature{grid-column:span 2}
+}
+@media (max-width:600px){
+  .container{padding:18px;margin:18px}
+  .gallery{grid-template-columns:1fr}
+  .feature{grid-column:span 1}
+  .header{flex-direction:column;align-items:flex-start;gap:12px}
+}
